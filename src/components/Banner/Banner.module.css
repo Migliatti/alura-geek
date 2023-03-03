@@ -1,0 +1,26 @@
+.banner {
+  padding: 32px;
+  background: url(./banner.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 -90px 90px rgba(0, 0, 0, 0.8);
+}
+
+.banner div {
+  max-width: 1136px;
+  margin: 0 auto;
+}
+
+.banner h2 {
+  padding-top: 116px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 52px;
+}
+
+.banner p {
+  padding: 16px 0;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 22px;
+}
