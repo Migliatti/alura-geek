@@ -1,0 +1,21 @@
+.card {
+    max-width: 176px;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 0;
+}
+
+p {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--blue);
+    padding-top: 8px;
+}
+
+.price {
+    color: var(--dark-gray);
+    padding: 0;
+}
