@@ -1,0 +1,23 @@
+.login__page {
+  background-color: #f5f5f5;
+  padding: 92px 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark-gray);
+}
+
+.form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 423px;
+  margin: 0 auto;
+  gap: 25px;
+}
+
+.form button {
+  width: 100%;
+}

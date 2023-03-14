@@ -1,10 +1,13 @@
 import Button1 from "components/Button-1";
 import styles from "./Header.module.css";
 import logo from "assets/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 
 function Header() {
+  const location = useLocation();
+  const loginPage = location.pathname === "/";
+
   return (
     <header className={styles.header}>
       <div className={styles.search}>
@@ -16,9 +19,14 @@ function Header() {
           <FaSearch className={styles.icon} />
         </label>
       </div>
-      <Link to="/login">
-        <Button1 style={{ padding: "16px 5vw" }}>Login</Button1>
-      </Link>
+
+      {loginPage ? (
+        <Link to="/login">
+          <Button1 style={{ padding: "16px 5vw" }}>Login</Button1>
+        </Link>
+      ) : (
+        <></>
+      )}
     </header>
   );
 }

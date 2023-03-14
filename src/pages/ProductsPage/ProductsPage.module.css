@@ -1,0 +1,21 @@
+.products__page {
+  background-color: #f5f5f5;
+  padding: 64px 0;
+}
+
+.topic {
+  display: flex;
+  align-items: center;
+  max-width: 1133px;
+  justify-content: space-between;
+  margin: 0 auto 16px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 64px;
+  margin: 0 auto;
+  max-width: 1133px;
+}

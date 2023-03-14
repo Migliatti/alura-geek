@@ -1,4 +1,5 @@
 /* eslint-disable array-callback-return */
+import styles from './InitialPage.module.css'
 import Banner from "components/Banner";
 import Cards from "components/Cards";
 import data from "json/db.json";
@@ -24,12 +25,14 @@ function InitialPage() {
   }, []);
 
   return (
-    <>
+    <main>
       <Banner />
-      {category.map((category) => {
-        return <Cards title={category} key={category} />;
-      })}
-    </>
+      <section className={styles.cards}>
+        {category.map((category) => {
+          return <Cards title={category} key={category} />;
+        })}
+      </section>
+    </main>
   );
 }
 
