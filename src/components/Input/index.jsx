@@ -1,6 +1,6 @@
 import styles from "./Input.module.css";
 
-function Input({ type, name, id, haveLabel }) {
+function Input({ type, name, id, haveLabel, value, newProduct }) {
   const noLabel = {
     label: {
       padding: "12px 0",
@@ -12,7 +12,14 @@ function Input({ type, name, id, haveLabel }) {
       {haveLabel ? (
         <>
           <label htmlFor={id}>{name}</label>
-          <input type={type} id={id} placeholder={`Write your ${name}`} />
+          <input
+            type={type}
+            id={id}
+            placeholder={`Write your ${name}`}
+            value={value}
+            required
+            onClick={newProduct}
+          />
         </>
       ) : (
         <input
@@ -20,6 +27,7 @@ function Input({ type, name, id, haveLabel }) {
           id={id}
           placeholder={`Write your ${name}`}
           style={noLabel.label}
+          value={value}
         />
       )}
     </div>

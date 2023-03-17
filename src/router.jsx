@@ -5,18 +5,26 @@ import Footer from "components/Footer";
 import LoginPage from "pages/LoginPage";
 import ProductsPage from "pages/ProductsPage";
 import CreatePage from "pages/CreatePage";
+import { ProdutosProvider } from "common/context/Products";
+import SingleProductPage from "pages/SingleProductPage";
+import { CategoryProvider } from "common/context/Categorys";
 
 function Router() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<InitialPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/create" element={<CreatePage />} />
-      </Routes>
-      <Footer />
+      <ProdutosProvider>
+        <CategoryProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<InitialPage />} />
+            <Route path="/product/:id" element={<SingleProductPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/create" element={<CreatePage />} />
+          </Routes>
+          <Footer />
+        </CategoryProvider>
+      </ProdutosProvider>
     </BrowserRouter>
   );
 }

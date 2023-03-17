@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import styles from "./Cards.module.css";
-import data from "json/db.json";
 import Card from "components/Card";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { useProdutosContext } from "common/context/Products";
 
 function Cards({ title }) {
+  const { product } = useProdutosContext();
   const [card, setCard] = useState([]);
 
   useEffect(() => {
     setCard(
-      data
+      product
         // eslint-disable-next-line array-callback-return
         .map((item) => {
           if (item.category === title) {
@@ -18,7 +19,7 @@ function Cards({ title }) {
         })
         .filter((sexo) => sexo !== undefined)
     );
-  }, []);
+  }, [product, title]);
 
   return (
     <div className={styles.cards}>

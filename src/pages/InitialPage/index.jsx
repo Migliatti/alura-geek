@@ -1,28 +1,10 @@
-/* eslint-disable array-callback-return */
-import styles from './InitialPage.module.css'
+import styles from "./InitialPage.module.css";
 import Banner from "components/Banner";
 import Cards from "components/Cards";
-import data from "json/db.json";
-import { useEffect, useState } from "react";
+import { useCategoryContext } from "common/context/Categorys";
 
 function InitialPage() {
-  const [category, setCategory] = useState([]);
-
-  useEffect(() => {
-    setCategory(
-      data
-        .map((card, index) => {
-          if (index !== 0) {
-            if (card.category !== data[index - 1].category) {
-              return card.category;
-            }
-          } else {
-            return data[index].category;
-          }
-        })
-        .filter((sexo) => sexo !== undefined)
-    );
-  }, []);
+  const { category } = useCategoryContext();
 
   return (
     <main>
