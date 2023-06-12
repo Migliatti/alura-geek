@@ -8,8 +8,18 @@ function LoginPage() {
     <main className={styles.login__page}>
       <form className={styles.form} action="">
         <h2 className={styles.title}>Iniciar Sessão</h2>
-        <Input type="email" id="email" name="email" />
-        <Input type="password" id="senha" name="password" />
+        <Input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Escreva seu email"
+        />
+        <Input
+          type="password"
+          id="senha"
+          name="password"
+          placeholder="Escreva sua senha"
+        />
         <Link to={"/products"}>
           <Button2>Entrar</Button2>
         </Link>

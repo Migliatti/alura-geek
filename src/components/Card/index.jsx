@@ -2,10 +2,16 @@ import styles from "./Card.module.css";
 import edita from "./edit_item.svg";
 import remove from "./delete_item.svg";
 import { useProdutosContext } from "common/context/Products";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Card({ item, edit }) {
   const { deleteProduct } = useProdutosContext();
+  const navigate = useNavigate();
+
+  const price =
+    typeof item.price === "number"
+      ? item.price.toFixed(2)
+      : Number(item.price).toFixed(2);
 
   return (
     <div className={styles.card}>
@@ -18,13 +24,13 @@ function Card({ item, edit }) {
               alt="remove"
               onClick={() => deleteProduct(item.id)}
             />
-            <img src={edita} alt="edit" />
+            <img src={edita} alt="edit" onClick={() => navigate(`/create`)} />
           </div>
-        ) : undefined}
+        ) : null}
       </div>
 
       <h3>{item.name}</h3>
-      <p className={styles.price}>R$ {item.price.toFixed(2)}</p>
+      <p className={styles.price}>R$ {price}</p>
       {edit ? (
         <p>{item.id}</p>
       ) : (

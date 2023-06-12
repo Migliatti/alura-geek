@@ -22,8 +22,17 @@ function Footer() {
         <form action="" className={styles.form}>
           <h4>Fale conosco</h4>
           <div>
-            <Input type="text" name="Nome" id="name" haveLabel />
-            <Textarea name="message" placeholder="Escreva a sua mensagem" />
+            <Input
+              type="text"
+              name="Nome"
+              id="nome-contact"
+              placeholder="Escreva seu nome"
+            />
+            <Textarea
+              name="message"
+              placeholder="Escreva a sua mensagem"
+              id="mensagem-contact"
+            />
           </div>
           <Button2>Enviar mensagem</Button2>
         </form>

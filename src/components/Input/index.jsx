@@ -1,6 +1,8 @@
+import { useProdutosContext } from "common/context/Products";
 import styles from "./Input.module.css";
 
-function Input({ type, name, id, haveLabel, value, newProduct }) {
+function Input({ type, name, id, haveLabel, placeholder }) {
+  const { formValues, setFormValues } = useProdutosContext();
   const noLabel = {
     label: {
       padding: "12px 0",
@@ -15,19 +17,24 @@ function Input({ type, name, id, haveLabel, value, newProduct }) {
           <input
             type={type}
             id={id}
-            placeholder={`Write your ${name}`}
-            value={value}
+            placeholder={placeholder}
+            value={formValues[`${id}`]}
+            onChange={(event) =>
+              setFormValues({ ...formValues, [id]: event.target.value })
+            }
             required
-            onClick={newProduct}
           />
         </>
       ) : (
         <input
           type={type}
           id={id}
-          placeholder={`Write your ${name}`}
+          placeholder={placeholder}
           style={noLabel.label}
-          value={value}
+          value={formValues[`${id}`]}
+          onChange={(event) =>
+            setFormValues({ ...formValues, [id]: event.target.value })
+          }
         />
       )}
     </div>

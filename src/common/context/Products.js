@@ -34,19 +34,10 @@ export const useProdutosContext = () => {
     );
   };
 
-  function newProduct(event) {
-    const { name, value } = event.target;
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
-  }
-
   return {
     product,
     setProduct,
     deleteProduct,
-    newProduct,
     formValues,
     setFormValues,
   };
